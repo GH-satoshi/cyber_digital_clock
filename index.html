@@ -4,7 +4,9 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Cyber Digital Clock</title>
+
   <style>
+    @import url("https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap");
     html, body {
       height: 100%;
       margin: 0;
@@ -17,13 +19,14 @@
     }
     #clock {
       position: relative;
-      font-family: "Courier New", Courier, monospace;
-      font-size: 2rem;
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 1.5rem;
       color: #00ff00;
       background: #000;
       padding: 6px 10px;
       border: 2px solid #00ff00;
       border-radius: 6px;
+      text-align: center; /* 中央寄せ */
       text-shadow:
         0 0 5px #00ff00,
         0 0 10px #00ff00,
@@ -100,8 +103,6 @@
     }
   </style>
 </head>
-
-
 <body>
   <div id="clock" aria-live="polite">Loading...</div>
 
@@ -124,7 +125,10 @@
         const mm = pad(d.getMinutes());
         const ss = pad(d.getSeconds());
 
-        el.textContent = `${y}.${m}.${day} ${weekday} ${hh}:${mm}:${ss}`;
+        // 1行表示バージョン
+        //el.textContent = `${y}.${m}.${day} ${weekday} ${hh}:${mm}:${ss}`;
+        // innerHTMLを使って2行に分ける
+        el.innerHTML = `${y}.${m}.${day} ${weekday}<br>${hh}:${mm}:${ss}`;
       }
 
       update();
@@ -133,3 +137,4 @@
   </script>
 </body>
 </html>
+
