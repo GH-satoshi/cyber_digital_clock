@@ -126,9 +126,9 @@
         const ss = pad(d.getSeconds());
 
         // 1行表示バージョン
-        //el.textContent = `${y}.${m}.${day} ${weekday} ${hh}:${mm}:${ss}`;
+        el.textContent = `${y}.${m}.${day} ${weekday} ${hh}:${mm}:${ss}`;
         // innerHTMLを使って2行に分ける
-        el.innerHTML = `${y}.${m}.${day} ${weekday}<br>${hh}:${mm}:${ss}`;
+        //el.innerHTML = `${y}.${m}.${day} ${weekday}<br>${hh}:${mm}:${ss}`;
       }
 
       update();
